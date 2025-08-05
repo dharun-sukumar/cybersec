@@ -3,8 +3,66 @@
     direction: rtl;
 }
 
-[dir="rtl"] .flex {
-    flex-direction: row-reverse;
+/* Simple RTL fixes without breaking layout */
+[dir="rtl"] .text-left {
+    text-align: right;
+}
+
+[dir="rtl"] .text-right {
+    text-align: left;
+}
+
+/* Dashboard specific RTL fixes */
+[dir="rtl"] .flex.h-screen {
+    flex-direction: row;
+}
+
+[dir="rtl"] .flex.h-screen > .w-64 {
+    order: 2;
+    width: 16rem !important; /* Force sidebar width to stay fixed */
+    min-width: 16rem !important;
+    max-width: 16rem !important;
+}
+
+[dir="rtl"] .flex.h-screen > .flex-1 {
+    order: 1;
+}
+
+/* Prevent sidebar content from expanding */
+[dir="rtl"] .w-64 {
+    width: 16rem !important;
+    flex-shrink: 0 !important;
+}
+
+[dir="rtl"] .w-64 * {
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+/* Navigation and header adjustments */
+[dir="rtl"] .ml-10 {
+    margin-left: 0;
+    margin-right: 2.5rem;
+}
+
+[dir="rtl"] .mr-2 {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+[dir="rtl"] .mr-3 {
+    margin-right: 0;
+    margin-left: 0.75rem;
+}
+
+[dir="rtl"] .mr-4 {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+[dir="rtl"] .ml-1 {
+    margin-left: 0;
+    margin-right: 0.25rem;
 }
 
 [dir="rtl"] .text-left {
