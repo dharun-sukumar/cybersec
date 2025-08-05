@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CyberShield Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="bg-gray-800 shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-lucide="shield-check" class="h-8 w-8 text-blue-500 mr-2"></i>
+                        <span class="text-xl font-bold">CyberShield Pro</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <div class="relative group">
+                            <button class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium flex items-center">
+                                Home
+                                <i data-lucide="chevron-down" class="h-4 w-4 ml-1"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-1 w-48 bg-gray-700 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-1">
+                                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-blue-400">Home</a>
+                                    <a href="index2.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-blue-400">Home 2</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="services.html" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="about.html" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="contact.html" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium">Contact</a>
+                        <div class="relative group">
+                            <button class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium flex items-center">
+                                Admin
+                                <i data-lucide="chevron-down" class="h-4 w-4 ml-1"></i>
+                            </button>
+                            <div class="absolute top-full left-0 mt-1 w-48 bg-gray-700 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="py-1">
+                                    <a href="user-dashboard.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-blue-400">User Dashboard</a>
+                                    <a href="admin-dashboard.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-blue-400">Admin Dashboard</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="login.html" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium">Login</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button id="rtlToggle" class="text-gray-300 hover:text-blue-400 p-2">
+                        <i data-lucide="languages" class="h-5 w-5"></i>
+                    </button>
+                    <button class="md:hidden" id="mobileMenuBtn">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-700">
+                <div class="text-gray-400 px-3 py-2 text-base font-medium">Home</div>
+                <a href="index.html" class="text-gray-300 hover:text-blue-400 block px-6 py-2 text-base font-medium">Home</a>
+                <a href="index2.html" class="text-gray-300 hover:text-blue-400 block px-6 py-2 text-base font-medium">Home 2</a>
+                <a href="services.html" class="text-gray-300 hover:text-blue-400 block px-3 py-2 text-base font-medium">Services</a>
+                <a href="about.html" class="text-gray-300 hover:text-blue-400 block px-3 py-2 text-base font-medium">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-blue-400 block px-3 py-2 text-base font-medium">Contact</a>
+                <div class="text-gray-400 px-3 py-2 text-base font-medium">Admin</div>
+                <a href="user-dashboard.html" class="text-gray-300 hover:text-blue-400 block px-6 py-2 text-base font-medium">User Dashboard</a>
+                <a href="admin-dashboard.html" class="text-gray-300 hover:text-blue-400 block px-6 py-2 text-base font-medium">Admin Dashboard</a>
+                <a href="login.html" class="bg-blue-600 hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16 min-h-screen flex items-center justify-center">
+        <div class="max-w-md w-full space-y-8 p-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold mb-2">Welcome Back</h2>
+                <p class="text-gray-400">Sign in to access your security dashboard</p>
+            </div>
+
+        <!-- Login Form -->
+        <div class="bg-gray-800 p-8 rounded-xl shadow-2xl">
+            <form class="space-y-6" id="loginForm">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" required
+                           class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                           placeholder="Enter your email">
+                </div>
+
+                <div class="relative">
+                    <label for="password" class="block text-sm font-medium text-gray-300 mb-2">Password</label>
+                    <input type="password" id="password" name="password" required
+                           class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pr-12"
+                           placeholder="Enter your password">
+                    <button type="button" id="togglePassword" class="absolute right-3 top-10 text-gray-400 hover:text-gray-300">
+                        <i data-lucide="eye" class="h-5 w-5" id="eyeIcon"></i>
+                    </button>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="remember" name="remember" class="rounded border-gray-600 bg-gray-700 text-blue-600 focus:ring-blue-500">
+                        <label for="remember" class="ml-2 text-sm text-gray-300">Remember me</label>
+                    </div>
+                    <a href="#" class="text-sm text-blue-400 hover:text-blue-300">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 px-4 py-3 rounded-lg font-medium transition-colors">
+                    Sign In
+                </button>
+            </form>
+
+            <div class="mt-6">
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-600"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-gray-800 text-gray-400">Or continue with</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-2 gap-3">
+                    <button class="w-full inline-flex justify-center py-3 px-4 border border-gray-600 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+                        <i data-lucide="chrome" class="h-5 w-5"></i>
+                        <span class="ml-2">Google</span>
+                    </button>
+                    <button class="w-full inline-flex justify-center py-3 px-4 border border-gray-600 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+                        <i data-lucide="github" class="h-5 w-5"></i>
+                        <span class="ml-2">Microsoft</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <p class="text-gray-400">
+                    Don't have an account? 
+                    <a href="register.html" class="text-blue-400 hover:text-blue-300 font-medium">Sign up here</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Quick Access -->
+        <div class="bg-gray-800 p-6 rounded-xl">
+            <h3 class="text-lg font-semibold mb-4 text-center">Quick Access</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="user-dashboard.html" class="bg-blue-600 hover:bg-blue-700 px-4 py-3 rounded-lg text-center font-medium transition-colors">
+                    User Portal
+                </a>
+                <a href="admin-dashboard.html" class="bg-purple-600 hover:bg-purple-700 px-4 py-3 rounded-lg text-center font-medium transition-colors">
+                    Admin Portal
+                </a>
+            </div>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="bg-yellow-900 border border-yellow-600 p-4 rounded-lg">
+            <div class="flex items-start">
+                <i data-lucide="shield-alert" class="h-5 w-5 text-yellow-400 mt-0.5 mr-3"></i>
+                <div>
+                    <h4 class="text-sm font-medium text-yellow-400">Security Notice</h4>
+                    <p class="text-sm text-yellow-300 mt-1">
+                        For your security, always log out when using shared devices and enable two-factor authentication.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Home -->
+        <div class="text-center">
+            <a href="index.html" class="inline-flex items-center text-gray-400 hover:text-blue-400 transition-colors">
+                <i data-lucide="arrow-left" class="h-4 w-4 mr-2"></i>
+                Back to Home
+            </a>
+        </div>
+    </div>
+    </main>
+
+    <script src="script.js"></script>
