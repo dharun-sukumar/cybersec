@@ -4,10 +4,8 @@ let chartInstances = {}; // Store chart instances to prevent recreation
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Lucide icons
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+    // Initialize Lucide icons with fallback
+    initLucideIcons();
     
     // Initialize RTL toggle
     initRTLToggle();
@@ -36,6 +34,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Prevent Chart.js infinite growth
     preventChartGrowth();
 });
+
+// Initialize Lucide icons with fallback
+function initLucideIcons() {
+    if (typeof lucide !== 'undefined') {
+        try {
+            lucide.createIcons();
+        } catch (error) {
+            console.warn('Lucide icons initialization failed:', error);
+        }
+    } else {
+        console.warn('Lucide icons library not loaded');
+    }
+}
 
 // RTL Toggle Functionality
 function initRTLToggle() {
@@ -69,9 +80,7 @@ function enableRTL() {
     // updateTextForRTL(); // Commented out to keep English text
     
     // Re-initialize icons to handle RTL transformations
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+    initLucideIcons();
 }
 
 function disableRTL() {
@@ -84,9 +93,7 @@ function disableRTL() {
     // updateTextForLTR(); // Commented out since text stays English
     
     // Re-initialize icons
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+    initLucideIcons();
 }
 
 function updateTextForRTL() {
@@ -128,13 +135,25 @@ function initMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     
     if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
+        // Ensure mobile menu starts hidden
+        mobileMenu.classList.add('hidden');
+        
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             mobileMenu.classList.toggle('hidden');
         });
         
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+        
+        // Close mobile menu on window resize to desktop size
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) { // md breakpoint
                 mobileMenu.classList.add('hidden');
             }
         });

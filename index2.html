@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberShield Pro - Alternative Homepage</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-900 text-white">
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="flex items-center space-x-4">
-                    <button id="rtlToggle" class="text-gray-300 hover:text-blue-400 p-2">
+                    <button id="rtlToggle" class="text-gray-300 hover:text-blue-400 p-2" title="Toggle RTL">
                         <i data-lucide="languages" class="h-5 w-5"></i>
                     </button>
                     <button class="md:hidden" id="mobileMenuBtn">
@@ -540,3 +540,27 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <!-- Icon initialization script with retry -->
+    <script>
+        // Retry icon initialization if needed
+        function retryIconInit() {
+            if (typeof lucide !== 'undefined') {
+                try {
+                    lucide.createIcons();
+                } catch (e) {
+                    console.warn('Icon retry failed:', e);
+                }
+            } else {
+                // Retry after 1 second if lucide isn't loaded yet
+                setTimeout(retryIconInit, 1000);
+            }
+        }
+        
+        // Initial retry after page load
+        window.addEventListener('load', function() {
+            setTimeout(retryIconInit, 500);
+        });
+    </script>
+</body>
+</html>

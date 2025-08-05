@@ -65,6 +65,139 @@
     left: 0;
 }
 
+/* Contact Page RTL Fixes */
+[dir="rtl"] .flex.items-start {
+    flex-direction: row;
+}
+
+[dir="rtl"] .flex.items-center {
+    flex-direction: row-reverse;
+}
+
+/* Contact info icons spacing */
+[dir="rtl"] .bg-blue-600.p-3.rounded-lg.mr-4,
+[dir="rtl"] .bg-green-600.p-3.rounded-lg.mr-4,
+[dir="rtl"] .bg-purple-600.p-3.rounded-lg.mr-4,
+[dir="rtl"] .bg-orange-600.p-3.rounded-lg.mr-4 {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+/* Quick actions arrow icons */
+[dir="rtl"] .flex.items-center .h-4.w-4.mr-2 {
+    margin-right: 0;
+    margin-left: 0.5rem;
+    transform: rotate(180deg);
+}
+
+/* Social media spacing */
+[dir="rtl"] .flex.space-x-4 {
+    flex-direction: row;
+    gap: 1rem;
+}
+
+[dir="rtl"] .flex.space-x-4 > * {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Grid and form RTL adjustments */
+[dir="rtl"] .grid.grid-cols-1.md\\:grid-cols-2 {
+    direction: rtl;
+}
+
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+    text-align: right;
+}
+
+[dir="rtl"] input::placeholder,
+[dir="rtl"] textarea::placeholder {
+    text-align: right;
+}
+
+/* Mobile Menu Enhancements */
+#mobileMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition: all 0.3s ease-in-out;
+}
+
+#mobileMenu.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+#mobileMenu:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Ensure mobile menu is visible on mobile devices */
+@media (max-width: 767px) {
+    #mobileMenu:not(.hidden) {
+        display: block !important;
+    }
+}
+
+/* Dropdown Menu Enhancements */
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1 !important;
+}
+
+.group:hover .group-hover\:visible {
+    visibility: visible !important;
+}
+
+/* Ensure dropdowns work on touch devices */
+.relative.group:focus-within .opacity-0 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.relative.group:focus-within .invisible {
+    visibility: visible;
+}
+
+/* Icon Fallbacks - in case Lucide icons don't load */
+.lucide-fallback {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* RTL Toggle Icon Fallback */
+#rtlToggle .lucide:empty::before {
+    content: "🌐";
+    font-size: 1.25rem;
+}
+
+/* Mobile Menu Icon Fallback */
+#mobileMenuBtn .lucide:empty::before {
+    content: "☰";
+    font-size: 1.5rem;
+}
+
+/* Menu chevron fallback */
+.lucide[data-lucide="chevron-down"]:empty::before {
+    content: "▼";
+    font-size: 0.75rem;
+}
+
+/* Shield icon fallback */
+.lucide[data-lucide="shield-check"]:empty::before {
+    content: "🛡️";
+}
+
 /* Animation Enhancements */
 @keyframes fadeInUp {
     from {
@@ -206,6 +339,37 @@
     transform: scaleX(1);
 }
 
+/* Additional RTL fixes for contact page */
+[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-right: 1rem;
+    margin-left: 0;
+}
+
+[dir="rtl"] .items-start {
+    align-items: flex-start;
+}
+
+/* RTL text alignment for contact info */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] p {
+    text-align: right;
+}
+
+[dir="rtl"] .text-center {
+    text-align: center;
+}
+
+/* RTL form adjustments */
+[dir="rtl"] label {
+    text-align: right;
+}
+
+[dir="rtl"] button[type="submit"] {
+    text-align: center;
+}
+
 /* Chart containers for better responsiveness */
 .chart-container {
     position: relative;
@@ -267,6 +431,48 @@
     margin-right: 0;
 }
 
+/* RTL Mobile Menu adjustments */
+[dir="rtl"] #mobileMenu {
+    left: 0;
+    right: 0;
+    text-align: right;
+}
+
+[dir="rtl"] #mobileMenu .block {
+    text-align: right;
+}
+
+/* RTL Navbar spacing */
+[dir="rtl"] .space-x-4 > * + * {
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+[dir="rtl"] .ml-10 {
+    margin-left: 0;
+    margin-right: 2.5rem;
+}
+
+/* RTL Contact page specific fixes */
+[dir="rtl"] .max-w-7xl {
+    direction: rtl;
+}
+
+[dir="rtl"] .lg\\:grid-cols-2 {
+    direction: rtl;
+}
+
+/* RTL Icon positioning in contact info */
+[dir="rtl"] .flex.items-start > div:first-child {
+    order: 2;
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+[dir="rtl"] .flex.items-start > div:last-child {
+    order: 1;
+}
+
 /* Button group RTL */
 [dir="rtl"] .btn-group > *:first-child {
     border-top-right-radius: 0;
@@ -310,4 +516,73 @@
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Ensure mobile menu button has consistent styling */
+#mobileMenuBtn {
+    color: #d1d5db; /* text-gray-300 */
+    transition: color 0.3s ease;
+}
+
+#mobileMenuBtn:hover {
+    color: #60a5fa; /* text-blue-400 */
+}
+
+/* RTL specific classes for contact page */
+[dir="rtl"] .rtl-contact-item {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .rtl\\:text-right {
+    text-align: right;
+}
+
+[dir="rtl"] .rtl\\:flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .rtl\\:mr-0 {
+    margin-right: 0;
+}
+
+[dir="rtl"] .rtl\\:ml-4 {
+    margin-left: 1rem;
+}
+
+[dir="rtl"] .rtl\\:ml-2 {
+    margin-left: 0.5rem;
+}
+
+[dir="rtl"] .rtl\\:rotate-180 {
+    transform: rotate(180deg);
+}
+
+[dir="rtl"] .rtl\\:space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+/* RTL form and input styling */
+[dir="rtl"] input[type="text"],
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] select,
+[dir="rtl"] textarea {
+    text-align: right;
+    direction: rtl;
+}
+
+[dir="rtl"] input::placeholder,
+[dir="rtl"] textarea::placeholder {
+    text-align: right;
+    direction: rtl;
+}
+
+/* RTL grid layout fixes */
+[dir="rtl"] .lg\\:grid-cols-2 {
+    direction: ltr;
+}
+
+[dir="rtl"] .lg\\:grid-cols-2 > * {
+    direction: rtl;
 }
