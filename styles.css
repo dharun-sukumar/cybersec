@@ -129,7 +129,7 @@
 }
 
 [dir="rtl"] .flex.items-center {
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
 }
 
 /* Contact info icons spacing */
@@ -414,7 +414,7 @@
 [dir="rtl"] h2,
 [dir="rtl"] h3,
 [dir="rtl"] p {
-    text-align: right;
+    /* text-align: right; */
 }
 
 [dir="rtl"] .text-center {
@@ -555,12 +555,19 @@
     transition: max-height 0.3s ease;
 }
 
+.faq p {
+  display: none; /* Start hidden */
+  margin: 0;
+}
+
+
 .faq-content.open {
-    max-height: 200px;
+    max-height: 1000px;
 }
 
 .faq-button.active .lucide {
     transform: rotate(180deg);
+    transition: transform 0.3s ease;
 }
 
 /* Loading spinner */

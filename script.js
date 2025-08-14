@@ -161,27 +161,60 @@ function initMobileMenu() {
 }
 
 // FAQ Accordion
+// function initFAQ() {
+//     const faqButtons = document.querySelectorAll('.faq-button');
+    
+//     faqButtons.forEach(button => {
+//         button.addEventListener('click', function() {
+//             const content = this.nextElementSibling;
+//             const icon = this.querySelector('.lucide');
+            
+//             // Toggle active class
+//             this.classList.toggle('active');
+            
+//             // Toggle content visibility
+//             content.classList.toggle('open');
+            
+//             // Rotate icon
+//             if (icon) {
+//                 icon.style.transform = this.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+//             }
+//         });
+//     });
+// }
+// FAQ Accordion
 function initFAQ() {
     const faqButtons = document.querySelectorAll('.faq-button');
-    
+
     faqButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const content = this.nextElementSibling;
-            const icon = this.querySelector('.lucide');
-            
-            // Toggle active class
-            this.classList.toggle('active');
-            
-            // Toggle content visibility
-            content.classList.toggle('hidden');
-            
-            // Rotate icon
-            if (icon) {
-                icon.style.transform = this.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        const content = button.nextElementSibling;
+        // Ensure all start closed
+        content.classList.remove('open');
+
+        button.addEventListener('click', function () {
+            const isActive = this.classList.contains('active');
+
+            // Close all
+            faqButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.nextElementSibling.classList.remove('open');
+                const icon = btn.querySelector('.lucide');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            });
+
+            // If the clicked one was not active, open it
+            if (!isActive) {
+                this.classList.add('active');
+                this.nextElementSibling.classList.add('open');
+                const icon = this.querySelector('.lucide');
+                if (icon) icon.style.transform = 'rotate(180deg)';
             }
         });
     });
 }
+
+
+
 
 // Form Handlers
 function initForms() {

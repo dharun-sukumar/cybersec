@@ -14,13 +14,20 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
+                    <!-- <div class="flex-shrink-0 flex items-center">
                         <i data-lucide="shield-check" class="h-8 w-8 text-blue-500 mr-2"></i>
                         <span class="text-xl font-bold">CyberShield Pro</span>
                     </div>
-                </div>
+                </div> -->
+                <div class="flex-shrink-0 flex items-center">
+    <a href="index.html" class="flex items-center hover:opacity-80 transition-opacity">
+        <i data-lucide="shield-check" class="h-8 w-8 text-blue-500 mr-2"></i>
+        <span class="text-xl font-bold">CyberShield Pro</span>
+    </a>
+</div>
+
                 
-                <div class="hidden md:block">
+               <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <div class="relative group">
                             <button class="text-blue-400 px-3 py-2 text-sm font-medium flex items-center">
@@ -34,18 +41,18 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="services.html" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium">Services</a>
-                        <a href="about.html" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium">About</a>
-                        <a href="contact.html" class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="services.html" class="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="about.html" class="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="contact.html" class="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium">Contact</a>
                         <div class="relative group">
-                            <button class="text-gray-300 hover:text-blue-400 px-3 py-2 text-sm font-medium flex items-center">
+                            <button class="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium flex items-center">
                                 Dashboard
                                 <i data-lucide="chevron-down" class="h-4 w-4 ml-1"></i>
                             </button>
                             <div class="absolute top-full left-0 mt-1 w-48 bg-gray-700 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                                 <div class="py-1">
-                                    <a href="user-dashboard.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-blue-400">User Dashboard</a>
-                                    <a href="admin-dashboard.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-600 hover:text-blue-400">Admin Dashboard</a>
+                                    <a href="user-dashboard.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 hover:text-blue-400">User Dashboard</a>
+                                    <a href="admin-dashboard.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-600 hover:text-blue-400">Admin Dashboard</a>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +62,7 @@
 
                 <div class="flex items-center space-x-4">
                     <button id="rtlToggle" class="text-gray-300 hover:text-blue-400 p-2">
-                        <i data-lucide="languages" class="h-5 w-5"></i>
+                        <i data-lucide="globe" class="h-5 w-5"></i>
                     </button>
                     <button class="md:hidden" id="mobileMenuBtn">
                         <i data-lucide="menu" class="h-6 w-6"></i>
@@ -131,7 +138,7 @@
                             <span class="font-medium">Admin User</span>
                         </div>
                         <a href="index.html" class="text-gray-300 hover:text-blue-400">
-                            <i data-lucide="log-out" class="h-5 w-5"></i>
+                            <i data-lucide="log-out" class="h-5 w-5"></i><span>Logout</span>
                         </a>
                     </div>
                 </div>
@@ -214,10 +221,10 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                     <div class="bg-gray-800 p-6 rounded-xl">
                         <h3 class="text-xl font-bold mb-4">Threat Detection Over Time</h3>
-                        <div class="h-64 w-full flex items-end justify-between space-x-2 bg-gray-700 rounded-lg p-4">
+                        <!-- <div class="h-64 w-full flex items-end justify-between space-x-2 bg-gray-700 rounded-lg p-4">
                             <div class="flex flex-col items-center">
                                 <div class="bg-red-500 w-8 mb-2" style="height: 48px;"></div>
-                                <span class="text-xs text-gray-400">Mon</span>
+                                <span class="text-xs text-gray-400">Sun</span>
                             </div>
                             <div class="flex flex-col items-center">
                                 <div class="bg-red-500 w-8 mb-2" style="height: 76px;"></div>
@@ -242,7 +249,38 @@
                             <div class="flex flex-col items-center">
                                 <div class="bg-red-500 w-8 mb-2" style="height: 72px;"></div>
                                 <span class="text-xs text-gray-400">Sun</span>
-                            </div>
+                            </div> --><div class="h-64 w-full flex items-end justify-between space-x-2 bg-gray-700 rounded-lg p-4">
+    <div class="flex flex-col items-center">
+        <div class="bg-red-500 w-8 mb-2" style="height: 48px;"></div>
+        <span class="text-xs text-white">Sun</span>
+    </div>
+    <div class="flex flex-col items-center">
+        <div class="bg-red-500 w-8 mb-2" style="height: 76px;"></div>
+        <span class="text-xs text-white">Mon</span>
+    </div>
+    <div class="flex flex-col items-center">
+        <div class="bg-red-500 w-8 mb-2" style="height: 32px;"></div>
+        <span class="text-xs text-white">Tue</span>
+    </div>
+    <div class="flex flex-col items-center">
+        <div class="bg-red-500 w-8 mb-2" style="height: 60px;"></div>
+        <span class="text-xs text-white">Wed</span>
+    </div>
+    <div class="flex flex-col items-center">
+        <div class="bg-red-500 w-8 mb-2" style="height: 100px;"></div>
+        <span class="text-xs text-white">Thu</span>
+    </div>
+    <div class="flex flex-col items-center">
+        <div class="bg-red-500 w-8 mb-2" style="height: 52px;"></div>
+        <span class="text-xs text-white">Fri</span>
+    </div>
+    <div class="flex flex-col items-center">
+        <div class="bg-red-500 w-8 mb-2" style="height: 72px;"></div>
+        <span class="text-xs text-white">Sat</span>
+    </div>
+
+
+                            
                         </div>
                         <div class="mt-2 text-sm text-gray-400">
                             <span class="text-red-400">●</span> Threats Detected: 12-25 per day
@@ -303,7 +341,7 @@
                                 </div>
                                 <div class="flex-1">
                                     <p class="font-medium">Critical: Malware detected</p>
-                                    <p class="text-sm text-gray-400">Client: TechCorp Inc. - 5 minutes ago</p>
+                                    <p class="text-sm text-white">Client: TechCorp Inc. - 5 minutes ago</p>
                                 </div>
                                 <button class="text-red-400 hover:text-red-300">
                                     <i data-lucide="external-link" class="h-4 w-4"></i>
@@ -316,7 +354,7 @@
                                 </div>
                                 <div class="flex-1">
                                     <p class="font-medium">Warning: Suspicious login attempt</p>
-                                    <p class="text-sm text-gray-400">Client: Global Systems - 12 minutes ago</p>
+                                    <p class="text-sm text-white">Client: Global Systems - 12 minutes ago</p>
                                 </div>
                                 <button class="text-yellow-400 hover:text-yellow-300">
                                     <i data-lucide="external-link" class="h-4 w-4"></i>
@@ -329,7 +367,7 @@
                                 </div>
                                 <div class="flex-1">
                                     <p class="font-medium">Info: Security scan completed</p>
-                                    <p class="text-sm text-gray-400">Client: DataFlow Ltd. - 28 minutes ago</p>
+                                    <p class="text-sm text-white">Client: DataFlow Ltd. - 28 minutes ago</p>
                                 </div>
                                 <button class="text-green-400 hover:text-green-300">
                                     <i data-lucide="external-link" class="h-4 w-4"></i>
