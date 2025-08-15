@@ -3,6 +3,16 @@
     direction: rtl;
 }
 
+[data-lucide] {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+html[dir="rtl"] svg[data-lucide] {
+    transform: scaleX(1) !important;
+}
+
+
 /* Simple RTL fixes without breaking layout */
 [dir="rtl"] .text-left {
     text-align: right;
