@@ -135,9 +135,9 @@ html[dir="rtl"] svg[data-lucide] {
 
 /* Contact Page RTL Fixes */
 [dir="rtl"] .flex.items-start {
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse;
     justify-content: flex-end;
-}
+} */
 
 [dir="rtl"] .flex.items-center {
     /* flex-direction: row-reverse; */
