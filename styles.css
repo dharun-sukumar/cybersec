@@ -134,14 +134,14 @@ html[dir="rtl"] svg[data-lucide] {
 }
 
 /* Contact Page RTL Fixes */
-[dir="rtl"] .flex.items-start {
+/* [dir="rtl"] .flex.items-start {
     /* flex-direction: row-reverse;
     justify-content: flex-end;
-} */
+} */ 
 
-[dir="rtl"] .flex.items-center {
-    /* flex-direction: row-reverse; */
-}
+/* [dir="rtl"] .flex.items-center {
+    /* flex-direction: row-reverse;
+} */
 
 /* Contact info icons spacing */
 [dir="rtl"] .bg-blue-600.p-3.rounded-lg.mr-4,
@@ -421,12 +421,12 @@ html[dir="rtl"] svg[data-lucide] {
 }
 
 /* RTL text alignment for contact info */
-[dir="rtl"] h1,
+/* [dir="rtl"] h1,
 [dir="rtl"] h2,
 [dir="rtl"] h3,
 [dir="rtl"] p {
-    /* text-align: right; */
-}
+    /* text-align: right; 
+} */
 
 [dir="rtl"] .text-center {
     text-align: center;
